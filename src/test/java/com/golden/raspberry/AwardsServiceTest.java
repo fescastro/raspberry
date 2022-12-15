@@ -112,19 +112,4 @@ public class AwardsServiceTest {
 		
 		return new IntervalAwardsProducerDto(min, max);
 	}
-	
-	/*private List<Award> getAwards() {
-		
-		List<Award> awards = new ArrayList();
-	    awards.add(new Award(1L,1989L,"Road House","United Artists", "Joel Silver", true, getProducers()));
-	    awards.add(new Award(2L,1989L,"Road House","United Artists","Joel Silver", true, getProducers()));
-	    awards.add(new Award(3L,1990L,"The Adventures of Ford Fairlane","20th Century Fox","Steven Perry and Joel Silver",true, getProducers()));
-	    awards.add(new Award(4L,1991L,"Hudson Hawk","TriStar Pictures","Joel Silver",true,getProducers()));
-	    awards.add(new Award(5L,2002L,"Swept Away","Screen Gems","Matthew Vaughn",true,getProducers()));
-	    awards.add(new Award(6L,2015L,"Fantastic Four","20th Century Fox","Simon Kinberg, Matthew Vaughn, Hutch Parker, Robert Kulzer and Gregory Goodman",true,getProducers()));
-	    awards.add(new Award(7L,2028L,"Test1","Test1","Simon Kinberg",true,getProducers()));
-	    awards.add(new Award(8L,1991L,"Test2","Test2","Steven Perry",true,getProducers()));
-	    
-	    return awards;		
-	}*/
 }
