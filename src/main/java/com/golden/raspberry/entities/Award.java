@@ -22,7 +22,7 @@ import lombok.Setter;
 @Setter 
 @AllArgsConstructor
 @NoArgsConstructor
-public class Awards {
+public class Award {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,6 +47,6 @@ public class Awards {
 	@JoinTable(name="AWARDS_PRODUCERS",
 	           joinColumns={@JoinColumn(name="AWARDS_ID")},
 	           inverseJoinColumns={@JoinColumn(name="PRODUCERS_ID")})
-	private List<Producers> producerList;
+	private List<Producer> producerList;
 	
 }

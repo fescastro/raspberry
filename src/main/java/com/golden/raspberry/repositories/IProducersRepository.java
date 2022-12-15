@@ -2,8 +2,8 @@ package com.golden.raspberry.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.golden.raspberry.entities.Producers;
+import com.golden.raspberry.entities.Producer;
 
-public interface IProducersRepository  extends JpaRepository<Producers, Long> {
+public interface IProducersRepository  extends JpaRepository<Producer, Long> {
 	
 }

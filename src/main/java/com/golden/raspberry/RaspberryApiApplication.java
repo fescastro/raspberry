@@ -47,13 +47,6 @@ public class RaspberryApiApplication {
 		//inserir em suas respectivas tabelas
 		CsvDto csvDto = readerFileCsv();
 		
-		//retorna uma lista com os produtores sem repetir para inserir na tabela producers
-		List<ProducerDto> producers = csvDto.getProducers().stream()
-				.filter(distinctByKey(ProducerDto::getName))
-				.collect(Collectors.toList());
-				
-		producersService.addProducersFileCsv(producers);
-		
 		//csvDto.getAwards() retorna uma lista de premiações com seus respectivos produtores
 		//para inserir na tabela Awards e na tabela mapeada de muitos para muitos Awards_producers
 		awardsService.addAwardsFileCsv(csvDto.getAwards());
@@ -116,11 +109,6 @@ public class RaspberryApiApplication {
 				.map(producer -> {
 			return new ProducerDto(producer.trim());
 		}).collect(Collectors.toList());
-	}
-	
-	private <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
-	    KeySetView<Object, Boolean> seen = ConcurrentHashMap.newKeySet();
-	    return t -> seen.add(keyExtractor.apply(t));
 	}
 
 }

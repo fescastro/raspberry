@@ -9,14 +9,10 @@ import lombok.Setter;
 @Setter 
 @AllArgsConstructor
 @NoArgsConstructor
-public class CountAwardsProduceDto {
+public class AwardGroupProducerDto {
 	
-	private Long timeInterval;
+	String producer;
 	
-	private String producer;
-	
-	private Long followingWins;
-	
-	private Long previousWin;
+	Long movieYear;
 
 }

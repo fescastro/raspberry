@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.golden.raspberry.dto.ProducerDto;
-import com.golden.raspberry.entities.Producers;
+import com.golden.raspberry.entities.Producer;
 import com.golden.raspberry.exceptionhandler.AwardsNotFoundException;
 import com.golden.raspberry.repositories.IProducersRepository;
 
@@ -21,28 +21,21 @@ public class ProducersService implements IProducersService {
 		this.repository = repository;
 	}
 	
-	//adiciona a lista dos produtores lidos do arquivo
-	public void addProducersFileCsv(List<ProducerDto> producerDto) {
-		
-		List<Producers> producers = producerDto
-				  .stream()
-				  .map(this::producersDtoToProducer)
-				  .collect(Collectors.toList());
-		
-		repository.saveAllAndFlush(producers);
-		
-	}
-	
 	//mapeia o dto utilizado na leitura de arquivo para a entidade de produtor
-	public Producers producersDtoToProducer(ProducerDto producerDto) {
-		Producers producers = new Producers();
+	public Producer producersDtoToProducer(ProducerDto producerDto) {
+		Producer producers = new Producer();
 		producers.setName(producerDto.getName());
 		return producers;
 	}
 	
 	//busca por Id o produtor
-	public Producers findByid(Long id) {
+	public Producer findByid(Long id) {
 		return repository.findById(id).orElseThrow(() -> new AwardsNotFoundException());
+	}
+	
+	//busca retorna todos produtores
+	public List<Producer> findAll() {
+		return repository.findAll();
 	}
 	
 }

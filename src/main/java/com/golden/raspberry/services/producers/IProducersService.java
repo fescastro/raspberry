@@ -3,13 +3,13 @@ package com.golden.raspberry.services.producers;
 import java.util.List;
 
 import com.golden.raspberry.dto.ProducerDto;
-import com.golden.raspberry.entities.Producers;
+import com.golden.raspberry.entities.Producer;
 
 public interface IProducersService {
 	
-	void addProducersFileCsv(List<ProducerDto> producerDto);
+	Producer producersDtoToProducer(ProducerDto producerDto);
 	
-	Producers producersDtoToProducer(ProducerDto producerDto);
+	Producer findByid(Long id);
 	
-	Producers findByid(Long id);
+	List<Producer> findAll();
 }

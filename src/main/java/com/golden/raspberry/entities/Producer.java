@@ -23,9 +23,9 @@ import lombok.Setter;
 @Setter 
 @AllArgsConstructor
 @NoArgsConstructor
-public class Producers {
+public class Producer {
 	
-	public Producers(String name) {
+	public Producer(String name) {
 		this.name = name;
 	}
 	
@@ -38,6 +38,6 @@ public class Producers {
 	
 	@JsonIgnore
 	@ManyToMany(mappedBy="producerList", cascade = CascadeType.ALL)
-	  private List<Awards> awardList;
+	  private List<Award> awardList;
 
 }
